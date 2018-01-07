@@ -9,7 +9,7 @@
 
 进入目录：`cd blog`
 
-安装依赖：`npm install  或  yarn add` 
+安装依赖：`npm install  或  yarn` 
 
 本地服务：`hexo server`
 
