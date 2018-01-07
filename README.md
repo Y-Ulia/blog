@@ -1,4 +1,4 @@
-# ulia-blog
+# blog
 记录当下，点亮未来
 
 安装或升级最新版本`node.js` > v6.x.x
@@ -7,9 +7,9 @@
 
 下载源码：`git clone git@github.com:Y-Ulia/ulia-blog.git`
 
-进入目录：`cd ulia-blog`
+进入目录：`cd blog`
 
-安装依赖：`npm install`
+安装依赖：`npm install  或  yarn add` 
 
 本地服务：`hexo server`
 
