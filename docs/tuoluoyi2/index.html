@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>陀螺仪</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+	<div class="index">
+		<ul>
+			<li class="deviceorientation">陀螺仪参数：</li>
+			<li class="alpha"></li>
+			<li class="beta"></li>
+			<li class="gamma"></li>
+			<li class="webkitCompassHeading"></li>
+			<li class="webkitCompassAccuracy"></li>
+		</ul>
+		<br>
+		<ul>
+			<li class="devicemotion">重力感应参数：</li>
+			<li class="interval"></li>
+			<li class="accelerationX"></li>
+			<li class="accelerationY"></li>
+			<li class="accelerationZ"></li>
+			<li class="accelerationIncludingGravityX"></li>
+			<li class="accelerationIncludingGravityY"></li>
+			<li class="accelerationIncludingGravityZ"></li>
+			<li class="rotationRateRalpha"></li>
+			<li class="rotationRateRbeta"></li>
+			<li class="rotationRateRgamma"></li>
+		</ul>
+	</div>
+	<script src="js/zepto.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script>
+		window.addEventListener('deviceorientation', function(event){
+			$('.alpha').html('扭转角度[0,360]：' + (event.alpha).toFixed(4))
+			$('.beta').html('前后倾斜[-180,180]：' + (event.beta).toFixed(4))
+			$('.gamma').html('左右倾斜[-90,90]：' + (event.gamma).toFixed(4))
+			// $('.webkitCompassHeading').html('指北针指向：' + event.compassHeading)
+			// $('.webkitCompassAccuracy').html('指北针精度：' + event.compassAccuracy)
+		}, true);
+		window.addEventListener('devicemotion', function(event) {
+			$('.interval').html('上次收到通知的间隔：' + event.interval)
+			$('.accelerationX').html('加速度X[-1,1]：' + (event.acceleration.x).toFixed(4))
+			$('.accelerationY').html('加速度Y[-1,1]：' + (event.acceleration.y).toFixed(4))
+			$('.accelerationZ').html('加速度Z[-1,1]：' + (event.acceleration.z).toFixed(4))
+			$('.accelerationIncludingGravityX').html('重力感应加速度X[-10,10]：' + (event.accelerationIncludingGravity.x).toFixed(4))
+			$('.accelerationIncludingGravityY').html('重力感应加速度Y[-10,10]：' + (event.accelerationIncludingGravity.y).toFixed(4))
+			$('.accelerationIncludingGravityZ').html('重力感应加速度Z[-10,10]：' + (event.accelerationIncludingGravity.z).toFixed(4))
+			$('.rotationRateRalpha').html('扭转旋转速度[-1,1]：' + (event.rotationRate.alpha).toFixed(4))
+			$('.rotationRateRbeta').html('前后旋转速度[-1,1]：' + (event.rotationRate.beta).toFixed(4))
+			$('.rotationRateRgamma').html('左右旋转速度[-1,1]：' + (event.rotationRate.gamma).toFixed(4))
+		})
+	</script>
+</body>
+</html>
