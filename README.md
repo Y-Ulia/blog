@@ -5,7 +5,7 @@
 
 全局配置：`npm install hexo-cli -g`
 
-下载源码：`git clone git@github.com:Y-Ulia/ulia-blog.git`
+下载源码：`git clone git@github.com:Y-Ulia/blog.git`
 
 进入目录：`cd blog`
 
